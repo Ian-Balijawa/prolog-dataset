@@ -36,6 +36,7 @@ lecturer(paddy-assimwe).
 lecturer(joseph-semwogere).
 lecturer(john-kizito).
 lecturer(joseph-lwomwa).
+
 takes_course(ian, bis-1200) :- student(ian).
 takes_course(ian, bis-2200) :- student(ian).
 takes_course(ian, bis-2209) :- student(ian).
@@ -176,12 +177,12 @@ teaches_course(joseph-semwogere, csc-2210) :- lecturer(joseph-semwogere).
 teaches_course(john-kizito, bis-1206) :- lecturer(john-kizito).
 teaches_course(joseph-lwomwa, csc-1200) :- lecturer(joseph-lwomwa).
 
-course(csc-1200, logic_programming, 3, X) :- lecturer(X), teaches_course(X, csc-1200).
-course(csc-2200, operating_systems, 4, X) :- lecturer(X), teaches_course(X, csc-1301).
-course(csc-2209, systems_prgramming, 3, X) :- lecturer(X), teaches_course(X, csc-1102).
-course(csc-2207, research_methodology, 3, X) :- lecturer(X), teaches_course(X, csc-1003).
-course(csc-2210, automata_complexity_and_computability, 3, X) :- lecturer(X), teaches_course(X, csc-2304).
-course(bis-1206, systems_analysis_and_design, 3, X) :- lecturer(X), teaches_course(X, csc-1305).
+course(csc-1200, logic_programming, 3) :- teaches_course(X, csc-1200).
+course(csc-2200, operating_systems, 4) :- teaches_course(X, csc-1301).
+course(csc-2209, systems_prgramming, 3) :- teaches_course(X, csc-1102).
+course(csc-2207, research_methodology, 3) :- teaches_course(X, csc-1003).
+course(csc-2210, automata_complexity_and_computability, 3) :- teaches_course(X, csc-2304).
+course(bis-1206, systems_analysis_and_design, 3) :- teaches_course(X, csc-1305).
 
 student_score(ian, csc-1200, 90).
 student_score(ian, csc-2200, 90).
@@ -341,31 +342,14 @@ student_belongs_to_department(X, Y) :- student(X), takes_course(X, Z), course_be
 
 member_of_department(X, Y) :- lecturer(X), teaches_course(X, Z), course_belongs_to_department(Z, Y).
 
-get_student_grade(_student_name, _course_unit) :- 
-    student_score(_student_name, _course_unit, _marks),
-        _marks >= 80, write('Grade => A'), nl;
-        _marks >= 70, _marks < 80, write('Grade => A'), nl.
-    
-database
-    student_score(symbol,symbol, real)
+cube :-
+   write('Write a number: '),
+   read(Number),
+   process(Number).
+process(stop) :- !.
+process(Number) :-
+   C is Number * Number * Number,
+   write('Cube of '),write(Number),write(': '),write(C),nl, cube.
 
-predicates
-    choice(integer)
-    repeat
+get_student_grade(X, _course_unit, _grade).
 
-clauses
-    repeat.
-        repeat.
-
-    choice(1) :-
-        write(\" Enter student name: \"),
-        readln(_student_name),
-        student_score(_student_name,_course_unit _marks).
-        write(_student_name, write(\" \"), write(course_unit), write(_marks), write(\" \")).
-
-    choice(2) :-
-        write(\" Enter course unit: \"),
-        readln(_course),
-        student_score(_student_name, _marks).
-        write(_student_name, write(\" \"), write(_marks), write(\" \")).
-    
