@@ -177,12 +177,12 @@ teaches_course(joseph-semwogere, csc-2210) :- lecturer(joseph-semwogere).
 teaches_course(john-kizito, bis-1206) :- lecturer(john-kizito).
 teaches_course(joseph-lwomwa, csc-1200) :- lecturer(joseph-lwomwa).
 
-course(csc-1200, logic_programming, 3) :- teaches_course(X, csc-1200).
-course(csc-2200, operating_systems, 4) :- teaches_course(X, csc-1301).
-course(csc-2209, systems_prgramming, 3) :- teaches_course(X, csc-1102).
-course(csc-2207, research_methodology, 3) :- teaches_course(X, csc-1003).
-course(csc-2210, automata_complexity_and_computability, 3) :- teaches_course(X, csc-2304).
-course(bis-1206, systems_analysis_and_design, 3) :- teaches_course(X, csc-1305).
+course(csc-1200, logic_programming, 3).
+course(csc-2200, operating_systems, 4).
+course(csc-2209, systems_prgramming, 3).
+course(csc-2207, research_methodology, 3).
+course(csc-2210, automata_complexity_and_computability, 3).
+course(bis-1206, systems_analysis_and_design, 3).
 
 student_score(ian, csc-1200, 90).
 student_score(ian, csc-2200, 90).
@@ -342,14 +342,893 @@ student_belongs_to_department(X, Y) :- student(X), takes_course(X, Z), course_be
 
 member_of_department(X, Y) :- lecturer(X), teaches_course(X, Z), course_belongs_to_department(Z, Y).
 
-cube :-
-   write('Write a number: '),
-   read(Number),
-   process(Number).
-process(stop) :- !.
-process(Number) :-
-   C is Number * Number * Number,
-   write('Cube of '),write(Number),write(': '),write(C),nl, cube.
+get_student_grade(ian, csc-1200, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
 
-get_student_grade(X, _course_unit, _grade).
+get_student_grade(ian, csc-1200, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
 
+get_student_grade(ian, csc-2200, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(ian, csc-2209, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(ian, csc-2207, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(ian, csc-2210, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(ian, bis-1206, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+
+get_student_grade(ian-balijawa, csc-1200, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(ian-balijawa, csc-1301, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(ian-balijawa, csc-1102, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(ian-balijawa, csc-1003, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(ian-balijawa, csc-2304, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(ian-balijawa, csc-1305, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(kabanda-sharif, csc-1200, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(kabanda-sharif, csc-2200, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(kabanda-sharif, csc-2209, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(kabanda-sharif, csc-2207, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(kabanda-sharif, csc-2210, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(kabanda-sharif, bis-1206, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+
+get_student_grade(mumbere-collins, csc-1200, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(mumbere-collins, csc-2200, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(mumbere-collins, csc-2209, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(mumbere-collins, csc-2207, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(mumbere-collins, csc-2210, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(mumbere-collins, bis-1206, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(noowe, csc-1200, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(noowe, csc-2200, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(noowe, csc-2209, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(noowe, csc-2207, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(noowe, csc-2210, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(noowe, bis-1206, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(jjuuko, csc-1200, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(jjuuko, csc-2200, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(jjuuko, csc-2209, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(jjuuko, csc-2207, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(jjuuko, csc-2210, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(jjuuko, bis-1206, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(resty, csc-1200, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(resty, csc-2200, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(resty, csc-2209, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(resty, csc-2207, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(resty, csc-2210, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(resty, bis-1206, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(sheena, csc-1200, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(sheena, csc-2200, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(sheena, csc-2209, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(sheena, csc-2207, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(sheena, csc-2210, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(sheena, bis-1206, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(bena, csc-1200, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(bena, csc-2200, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(bena, csc-2209, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(bena, csc-2207, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(bena, csc-2210, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(bena, bis-1206, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(brian, csc-1200, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(brian, csc-2200, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(brian, csc-2209, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(brian, csc-2207, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(brian, csc-2210, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(brian, bis-1206, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(alan, csc-1200, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(alan, csc-2200, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(alan, csc-2209, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(alan, csc-2207, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(alan, csc-2210, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(alan, bis-1206, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(peter, csc-1200, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(peter, csc-2200, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(peter, csc-2209, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(peter, csc-2207, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(peter, csc-2210, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(peter, bis-1206, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(stewie, csc-1200, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(stewie, csc-2200, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(stewie, csc-2209, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(stewie, csc-2207, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(stewie, csc-2210, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(stewie, bis-1206, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(brian-griffin, csc-1200, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(brian-griffin, csc-2200, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(brian-griffin, csc-2209, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(brian-griffin, csc-2207, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(brian-griffin, csc-2210, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(brian-griffin, bis-1206, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(james, csc-1200, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(james, csc-2200, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(james, csc-2209, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(james, csc-2207, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(james, csc-2210, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(james, bis-1206, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl
+
+get_student_grade(timothy, csc-1200, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(timothy, csc-2200, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(timothy, csc-2209, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(timothy, csc-2207, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(timothy, csc-2210, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(timothy, bis-1206, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(balijawa, csc-1200, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(balijawa, csc-2200, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(balijawa, csc-2209, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(balijawa, csc-2207, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(balijawa, csc-2210, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(balijawa, bis-1206, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(kabanda, csc-1200, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(kabanda, csc-2200, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(kabanda, csc-2209, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(kabanda, csc-2207, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(kabanda, csc-2210, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(kabanda, bis-1206, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(mumbere, csc-1200, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(mumbere, csc-2200, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(mumbere, csc-2209, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(mumbere, csc-2207, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(mumbere, csc-2210, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(mumbere, bis-1206, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(collins, csc-1200, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(collins, csc-2200, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(collins, csc-2209, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(collins, csc-2207, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(collins, csc-2210, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(collins, bis-1206, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(noowe-charlotte, csc-1200, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(noowe-charlotte, csc-2200, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(noowe-charlotte, csc-2209, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(noowe-charlotte, csc-2207, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(noowe-charlotte, csc-2210, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
+
+get_student_grade(noowe-charlotte, bis-1206, _score):-
+	 _score >= 80, write("GP = 5"), nl;
+	 _score >= 70, _score < 80, write("GP = 4"), nl;
+	 _score >= 60, _score < 70, write("GP = 3"), nl;
+	 _score >= 50, _score < 60, write("GP = 2"), nl;
+	 _score >= 0, _score < 50, write("GP = 1"), nl.
