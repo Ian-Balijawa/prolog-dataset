@@ -415,7 +415,5 @@ compute_student_GP(_student_name, _grade_point) :- student(_student_name), stude
 	_score >= 50, _score < 60, _total_credits is _total_credits + 2 * _course_credits,nl;
 	_score >= 0, _score < 50, _total_credits is _total_credits + 1 * _course_credits,nl.
 
-
-
 compute_student_GP(ian, _grade_point) :-
 	_grade_point is ( (5 * 3) + (4 * 4) + (3 * 3) + (4 * 3) + (2 * 3) + (5 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).

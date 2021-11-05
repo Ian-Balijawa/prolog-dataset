@@ -1,3 +1,12 @@
+/*Part One
+JJUUKO TIMOTHY 19/U/16453/PS 1900716453
+BALIJAWA IAN 19/U/0123 1900700123
+MUMBERE COLLINS 19/U/16965/PS 1900716965
+KABANDA SHARIF 19/16463/PS 1900716463
+WONIALA MARK 17/U/10912/PS 217011278 
+*/
+
+% a student_belongs instance
 student(ian).
 student(sharif).
 student(collins).
@@ -23,6 +32,7 @@ student(noowe-charlotte).
 student(jesse).
 student(duke).
 
+% b lecturer instance
 lecturer(rose).
 lecturer(nakibuule).
 lecturer(kizito).
@@ -36,6 +46,37 @@ lecturer(paddy-assimwe).
 lecturer(joseph-semwogere).
 lecturer(john-kizito).
 lecturer(joseph-lwomwa).
+lecturer(ritah).
+lecturer(rhona).
+lecturer(patrick).
+lecturer(laden).
+lecturer(alex).
+lecturer(simon).
+lecturer(johnson).
+
+% c teaches_course
+teaches_course(rose, csc1200).
+teaches_course(nakibuule, csc2200).
+teaches_course(kizito, csc2209).
+teaches_course(joseph, csc2207).
+teaches_course(paddy, csc2210).
+teaches_course(bit-wire, bis1206).
+teaches_course(robert, csc1200).
+teaches_course(john, csc2200) .
+teaches_course(rose-nakibuule, csc2209).
+teaches_course(paddy-assimwe, csc2207).
+teaches_course(joseph-semwogere, csc2210) .
+teaches_course(john-kizito, bis1206) .
+teaches_course(joseph-lwomwa, csc1200).
+teaches_course(ritah, csc1100).
+teaches_course(rhona, csc1230).
+teaches_course(patrick, csc2219).
+teaches_course(laden, csc2347).
+teaches_course(alex, csc2781).
+teaches_course(simon, bis1906).
+teaches_course(johnson, csc1590).
+
+ % d takes_course instance
 
 takes_course(ian, csc1200).
 takes_course(ian, csc2200).
@@ -163,26 +204,30 @@ takes_course(stewie, csc2207).
 takes_course(stewie, csc2210).
 takes_course(stewie, bis1206).
 
-teaches_course(rose, csc1200).
-teaches_course(nakibuule, csc2200).
-teaches_course(kizito, csc2209).
-teaches_course(joseph, csc2207).
-teaches_course(paddy, csc2210).
-teaches_course(bit-wire, bis1206).
-teaches_course(robert, csc1200).
-teaches_course(john, csc2200).
-teaches_course(rose-nakibuule, csc2209).
-teaches_course(paddy-assimwe, csc2207).
-teaches_course(joseph-semwogere, csc2210).
-teaches_course(john-kizito, bis1206).
-teaches_course(joseph-lwomwa, csc1200).
-
+% e course instance
 course(csc1200, logic_programming, 3).
 course(csc2200, operating_systems, 4).
 course(csc2209, systems_prgramming, 3).
 course(csc2207, research_methodology, 3).
 course(csc2210, automata_complexity_and_computability, 3).
 course(bis1206, systems_analysis_and_design, 3).
+course(csc1100, stuctured_programming, 3).
+course(csc1780, dim, 4).
+course(csc2647, saad, 3).
+course(csc2256, oranisation_ethics, 3).
+course(csc2215, hacking, 3).
+course(bis1209, opp, 3).
+course(csc1983, ccna, 3).
+course(csc2985, cisco, 4).
+course(csc6213, system_admin, 3).
+course(csc6579, networks, 3).
+course(csc4568, mat_lab, 3).
+course(bis1657, os, 3).
+course(csc2357, prolog, 3).
+course(csc1276, obp, 4).
+
+
+% f student_score
 
 student_score(ian, csc1200, 90).
 student_score(ian, csc2200, 75).
@@ -345,105 +390,133 @@ student_score(noowe-charlotte, csc2207, 88).
 student_score(noowe-charlotte, csc2210, 65).
 student_score(noowe-charlotte, bis1206, 50).
 
-course_belongs_to_department(csc1200, computer_science_department).
-course_belongs_to_department(csc2200, computer_science_department).
-course_belongs_to_department(csc2209, computer_science_department).
-course_belongs_to_department(csc2207, computer_science_department).
-course_belongs_to_department(csc2210, computer_science_department).
+% g course_belongs_to department
+course_belongs_to_department(csc1200, cs).
+course_belongs_to_department(csc2200, it).
+course_belongs_to_department(csc2209, cs).
+course_belongs_to_department(csc2207, cs).
+course_belongs_to_department(csc2210, networks).
 course_belongs_to_department(bis1206, information_systems_department).
+course_belongs_to_department(csc1100, it).
+course_belongs_to_department(csc1780, cs).
+course_belongs_to_department(csc2648, cs).
+course_belongs_to_department(csc2256, bis).
+course_belongs_to_department(csc2215, networks).
+course_belongs_to_department(bis1209, information_systems_department).
+course_belongs_to_department(csc1983, it).
+course_belongs_to_department(csc2985, cs).
+course_belongs_to_department(csc6213, cs).
+course_belongs_to_department(csc6579, cs).
+course_belongs_to_department(csc4568, networks).
+course_belongs_to_department(bis1657, information_systems_department).
+course_belongs_to_department(csc2357, networks).
+course_belongs_to_department(bis1276, information_systems_department).
 
-student_belongs(Student, Department) :- student(Student), takes_course(Student, Course), course_belongs_to_department(Course, Department).
+% a student_belongs_to_department
+student_belongs(X, Y) :- student(X), takes_course(X, Z), course_belongs_to_department(Z, Y).
 
-member_of_department(Lecturer, Department) :- lecturer(Lecturer), teaches_course(Lecturer, Course), course_belongs_to_department(Course, Department).
+% b member_of_department
+member_of_department(X, Y) :- lecturer(X), teaches_course(X, Z), course_belongs_to_department(Z, Y).
 
-belong_to_same_department(S, L) :- student_belongs(S, D), member_of_department(L, D).
+% c get_student_grade
 
-belong_to_two_departments(L, X, Y) :- member_of_department(L, X), member_of_department(L,Y), X = Y.
+get_student_grade(_student_name, _course_unit, _grade) :- student(_student_name), student_score(_student_name, _course_unit,_score),
+	(	_score >= 80 ->	_grade is 5;
+		_score >= 70 ->	_grade is 4;
+		_score >= 60 ->	_grade is 3;
+		_score >= 50 ->	_grade is 2;
+		_grade is 1
+	).
 
-
-get_student_grade(_student_name,_course_unit, _grade) :- student(_student_name),student_score(_student_name,_course_unit,_score),
-	_score >= 80, _grade is 5.
-
-get_student_grade(_student_name,_course_unit, _grade) :- student(_student_name),student_score(_student_name,_course_unit,_score),
-	_score >= 70, _score < 80, _grade is 4.
-
-get_student_grade(_student_name,_course_unit, _grade) :- student(_student_name),student_score(_student_name,_course_unit,_score),
-	_score >= 60, _score < 70, _grade is 3.
-
-get_student_grade(_student_name,_course_unit, _grade) :- student(_student_name),student_score(_student_name,_course_unit,_score),
-	_score >= 50, _score < 60, _grade is 2.
-
-get_student_grade(_student_name,_course_unit, _grade) :- student(_student_name),student_score(_student_name,_course_unit,_score),
-	_score >= 0, _score < 50, _grade is 1.
-
+% d compute_student_GP
 compute_student_GP(ian, _grade_point) :-
- 	_grade_point is ( (5 * 3) + (4 * 4) + (3 * 3) + (4 * 3) + (1 * 3) + (1 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
+	_grade_point is ( (5 * 3) + (4 * 4) + (3 * 3) + (4 * 3) + (1 * 3) + (1 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
 
 compute_student_GP(sharif, _grade_point) :-
- 	_grade_point is ( (5 * 3) + (4 * 4) + (3 * 3) + (4 * 3) + (2 * 3) + (5 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
+	_grade_point is ( (5 * 3) + (4 * 4) + (3 * 3) + (4 * 3) + (2 * 3) + (5 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
 
 compute_student_GP(collins, _grade_point) :-
- 	_grade_point is ( (1 * 3) + (4 * 4) + (3 * 3) + (5 * 3) + (3 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
+	_grade_point is ( (1 * 3) + (4 * 4) + (3 * 3) + (5 * 3) + (3 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
 
 compute_student_GP(jjuuko, _grade_point) :-
- 	_grade_point is ( (1 * 3) + (4 * 4) + (3 * 3) + (5 * 3) + (3 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
+	_grade_point is ( (1 * 3) + (4 * 4) + (3 * 3) + (5 * 3) + (3 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
 
 compute_student_GP(sheena, _grade_point) :-
- 	_grade_point is ( (5 * 3) + (4 * 4) + (3 * 3) + (4 * 3) + (1 * 3) + (1 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
+	_grade_point is ( (5 * 3) + (4 * 4) + (3 * 3) + (4 * 3) + (1 * 3) + (1 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
 
 compute_student_GP(charlotte, _grade_point) :-
- 	_grade_point is ( (5 * 3) + (4 * 4) + (3 * 3) + (4 * 3) + (2 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
+	_grade_point is ( (5 * 3) + (4 * 4) + (3 * 3) + (4 * 3) + (2 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
 
 compute_student_GP(alan, _grade_point) :-
- 	_grade_point is ( (5 * 3) + (5 * 4) + (3 * 3) + (5 * 3) + (3 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
+	_grade_point is ( (5 * 3) + (5 * 4) + (3 * 3) + (5 * 3) + (3 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
 
 compute_student_GP(resty, _grade_point) :-
- 	_grade_point is ( (5 * 3) + (5 * 4) + (3 * 3) + (5 * 3) + (3 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
+	_grade_point is ( (5 * 3) + (5 * 4) + (3 * 3) + (5 * 3) + (3 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
 
 compute_student_GP(james, _grade_point) :-
- 	_grade_point is ( (5 * 3) + (5 * 4) + (3 * 3) + (5 * 3) + (3 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
+	_grade_point is ( (5 * 3) + (5 * 4) + (3 * 3) + (5 * 3) + (3 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
 
 compute_student_GP(peter, _grade_point) :-
- 	_grade_point is ( (5 * 3) + (5 * 4) + (3 * 3) + (5 * 3) + (3 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
+	_grade_point is ( (5 * 3) + (5 * 4) + (3 * 3) + (5 * 3) + (3 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
 
 compute_student_GP(griffin, _grade_point) :-
- 	_grade_point is ( (5 * 3) + (5 * 4) + (3 * 3) + (5 * 3) + (3 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
+	_grade_point is ( (5 * 3) + (5 * 4) + (3 * 3) + (5 * 3) + (3 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
 
 compute_student_GP(stewie, _grade_point) :-
- 	_grade_point is ( (5 * 3) + (5 * 4) + (3 * 3) + (5 * 3) + (3 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
+	_grade_point is ( (5 * 3) + (5 * 4) + (3 * 3) + (5 * 3) + (3 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
 
 compute_student_GP(brian-griffin, _grade_point) :-
- 	_grade_point is ( (5 * 3) + (5 * 4) + (3 * 3) + (5 * 3) + (3 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
+	_grade_point is ( (5 * 3) + (5 * 4) + (3 * 3) + (5 * 3) + (3 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
 
 compute_student_GP(balijawa, _grade_point) :-
- 	_grade_point is ( (5 * 3) + (5 * 4) + (3 * 3) + (5 * 3) + (3 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
+	_grade_point is ( (5 * 3) + (5 * 4) + (3 * 3) + (5 * 3) + (3 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
 
 compute_student_GP(kabanda, _grade_point) :-
- 	_grade_point is ( (5 * 3) + (5 * 4) + (3 * 3) + (5 * 3) + (3 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
+	_grade_point is ( (5 * 3) + (5 * 4) + (3 * 3) + (5 * 3) + (3 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
 
 compute_student_GP(mumbere, _grade_point) :-
- 	_grade_point is ( (5 * 3) + (5 * 4) + (3 * 3) + (5 * 3) + (3 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
+	_grade_point is ( (5 * 3) + (5 * 4) + (3 * 3) + (5 * 3) + (3 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
 
 compute_student_GP(timothy, _grade_point) :-
- 	_grade_point is ( (5 * 3) + (5 * 4) + (3 * 3) + (5 * 3) + (3 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
+	_grade_point is ( (5 * 3) + (5 * 4) + (3 * 3) + (5 * 3) + (3 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
 
 compute_student_GP(noowe, _grade_point) :-
- 	_grade_point is ( (5 * 3) + (5 * 4) + (3 * 3) + (5 * 3) + (3 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
+	_grade_point is ( (5 * 3) + (5 * 4) + (3 * 3) + (5 * 3) + (3 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
 
 compute_student_GP(bena, _grade_point) :-
- 	_grade_point is ( (5 * 3) + (5 * 4) + (3 * 3) + (5 * 3) + (3 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
+	_grade_point is ( (5 * 3) + (5 * 4) + (3 * 3) + (5 * 3) + (3 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
 
 compute_student_GP(mumbere-collins, _grade_point) :-
- 	_grade_point is ( (5 * 3) + (5 * 4) + (3 * 3) + (5 * 3) + (3 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
+	_grade_point is ( (5 * 3) + (5 * 4) + (3 * 3) + (5 * 3) + (3 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
 
 compute_student_GP(kabanda-sharif, _grade_point) :-
- 	_grade_point is ( (5 * 3) + (5 * 4) + (3 * 3) + (5 * 3) + (3 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
+	_grade_point is ( (5 * 3) + (5 * 4) + (3 * 3) + (5 * 3) + (3 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
 
 compute_student_GP(noowe-charlotte, _grade_point) :-
- 	_grade_point is ( (5 * 3) + (5 * 4) + (3 * 3) + (5 * 3) + (3 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
+	_grade_point is ( (5 * 3) + (5 * 4) + (3 * 3) + (5 * 3) + (3 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
 
 compute_student_GP(jesse, _grade_point) :-
- 	_grade_point is ( (5 * 3) + (5 * 4) + (3 * 3) + (5 * 3) + (3 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
+	_grade_point is ( (5 * 3) + (5 * 4) + (3 * 3) + (5 * 3) + (3 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
 
 compute_student_GP(duke, _grade_point) :-
- 	_grade_point is ( (5 * 3) + (5 * 4) + (3 * 3) + (5 * 3) + (3 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
+	_grade_point is ( (5 * 3) + (5 * 4) + (3 * 3) + (5 * 3) + (3 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
