@@ -53,6 +53,50 @@ lecturer(laden).
 lecturer(alex).
 lecturer(simon).
 lecturer(johnson).
+lecturer(mathew).
+lecturer(tom).
+lecturer(luke).
+lecturer(angel).
+lecturer(allen).
+
+% assignment 2 additions
+% 2 (A)
+
+% electives
+elective(csc2215).
+elective(bis1209).
+elective(csc1983).
+elective(csc2985).
+elective(csc6213).
+elective(csc6579).
+elective(csc4568).
+elective(bis1657).
+elective(csc2357).
+elective(csc1276).
+
+% core courses
+core(csc1200).
+core(csc2200).
+core(csc2209).
+core(csc2207).
+core(csc2210).
+core(bis1206).
+core(csc1100).
+core(csc1780).
+core(csc2647).
+core(csc2256).
+
+% audited courses
+audited(bse1100).
+audited(bse2100).
+audited(bse2200).
+audited(bse2201).
+audited(bse1200).
+audited(bse1300).
+audited(bse1400).
+audited(bse1500).
+audited(bse1210).
+audited(bse1206).
 
 % c teaches_course
 teaches_course(rose, csc1200).
@@ -84,6 +128,12 @@ takes_course(ian, csc2209).
 takes_course(ian, csc2207).
 takes_course(ian, csc2210).
 takes_course(ian, bis1206).
+takes_course(ian, 15-211).
+takes_course(ian, 15-212).
+takes_course(ian, 15-381).
+takes_course(ian, 21-484).
+takes_course(ian, 15-381).
+takes_course(ian, 15-381).
 
 takes_course(sheena, csc1200).
 takes_course(sheena, csc2200).
@@ -91,6 +141,12 @@ takes_course(sheena, csc2209).
 takes_course(sheena, csc2207).
 takes_course(sheena, csc2210).
 takes_course(sheena, bis1206).
+takes_course(sheena, 15-211).
+takes_course(sheena, 15-212).
+takes_course(sheena, 15-381).
+takes_course(sheena, 21-484).
+takes_course(sheena, 15-381).
+takes_course(sheena, 15-381).
 
 takes_course(jesse, csc1200).
 takes_course(jesse, csc2200).
@@ -98,6 +154,12 @@ takes_course(jesse, csc2209).
 takes_course(jesse, csc2207).
 takes_course(jesse, csc2210).
 takes_course(jesse, bis1206).
+takes_course(jesse, 15-211).
+takes_course(jesse, 15-212).
+takes_course(jesse, 15-381).
+takes_course(jesse, 21-484).
+takes_course(jesse, 15-381).
+takes_course(jesse, 15-381).
 
 takes_course(sharif, csc1200).
 takes_course(sharif, csc2200).
@@ -105,6 +167,12 @@ takes_course(sharif, csc2209).
 takes_course(sharif, csc2207).
 takes_course(sharif, csc2210).
 takes_course(sharif, bis1206).
+takes_course(sharif, 15-211).
+takes_course(sharif, 15-212).
+takes_course(sharif, 15-381).
+takes_course(sharif, 21-484).
+takes_course(sharif, 15-381).
+takes_course(sharif, 15-381).
 
 takes_course(kabanda-sharif, csc1200).
 takes_course(kabanda-sharif, csc2200).
@@ -112,6 +180,12 @@ takes_course(kabanda-sharif, csc2209).
 takes_course(kabanda-sharif, csc2207).
 takes_course(kabanda-sharif, csc2210).
 takes_course(kabanda-sharif, bis1206).
+takes_course(kabanda-sharif, 15-211).
+takes_course(kabanda-sharif, 15-212).
+takes_course(kabanda-sharif, 15-381).
+takes_course(kabanda-sharif, 21-484).
+takes_course(kabanda-sharif, 15-381).
+takes_course(kabanda-sharif, 15-381).
 
 takes_course(collins, csc1200).
 takes_course(collins, csc2200).
@@ -119,6 +193,12 @@ takes_course(collins, csc2209).
 takes_course(collins, csc2207).
 takes_course(collins, csc2210).
 takes_course(collins, bis1206).
+takes_course(collins, 15-211).
+takes_course(collins, 15-212).
+takes_course(collins, 15-381).
+takes_course(collins, 21-484).
+takes_course(collins, 15-381).
+takes_course(collins, 15-381).
 
 takes_course(mumbere-collins, csc1200).
 takes_course(mumbere-collins, csc2200).
@@ -126,6 +206,12 @@ takes_course(mumbere-collins, csc2209).
 takes_course(mumbere-collins, csc2207).
 takes_course(mumbere-collins, csc2210).
 takes_course(mumbere-collins, bis1206).
+takes_course(mumbere-collins, 15-211).
+takes_course(mumbere-collins, 15-212).
+takes_course(mumbere-collins, 15-381).
+takes_course(mumbere-collins, 21-484).
+takes_course(mumbere-collins, 15-381).
+takes_course(mumbere-collins, 15-381).
 
 takes_course(duke, csc1200).
 takes_course(duke, csc2200).
@@ -133,6 +219,12 @@ takes_course(duke, csc2209).
 takes_course(duke, csc2207).
 takes_course(duke, csc2210).
 takes_course(duke, bis1206).
+takes_course(duke, 15-211).
+takes_course(duke, 15-212).
+takes_course(duke, 15-381).
+takes_course(duke, 21-484).
+takes_course(duke, 15-381).
+takes_course(duke, 15-381).
 
 takes_course(timothy, csc1200).
 takes_course(timothy, csc2200).
@@ -140,6 +232,12 @@ takes_course(timothy, csc2209).
 takes_course(timothy, csc2207).
 takes_course(timothy, csc2210).
 takes_course(timothy, bis1206).
+takes_course(timothy, 15-211).
+takes_course(timothy, 15-212).
+takes_course(timothy, 15-381).
+takes_course(timothy, 21-484).
+takes_course(timothy, 15-381).
+takes_course(timothy, 15-381).
 
 takes_course(bena, csc1200).
 takes_course(bena, csc2200).
@@ -147,6 +245,12 @@ takes_course(bena, csc2209).
 takes_course(bena, csc2207).
 takes_course(bena, csc2210).
 takes_course(bena, bis1206).
+takes_course(bena, 15-211).
+takes_course(bena, 15-212).
+takes_course(bena, 15-381).
+takes_course(bena, 21-484).
+takes_course(bena, 15-381).
+takes_course(bena, 15-381).
 
 takes_course(noowe, csc1200).
 takes_course(noowe, csc2200).
@@ -154,6 +258,12 @@ takes_course(noowe, csc2209).
 takes_course(noowe, csc2207).
 takes_course(noowe, csc2210).
 takes_course(noowe, bis1206).
+takes_course(noowe, 15-211).
+takes_course(noowe, 15-212).
+takes_course(noowe, 15-381).
+takes_course(noowe, 21-484).
+takes_course(noowe, 15-381).
+takes_course(noowe, 15-381).
 
 takes_course(jjuuko, csc1200).
 takes_course(jjuuko, csc2200).
@@ -161,6 +271,12 @@ takes_course(jjuuko, csc2209).
 takes_course(jjuuko, csc2207).
 takes_course(jjuuko, csc2210).
 takes_course(jjuuko, bis1206).
+takes_course(jjuuko, 15-211).
+takes_course(jjuuko, 15-212).
+takes_course(jjuuko, 15-381).
+takes_course(jjuuko, 21-484).
+takes_course(jjuuko, 15-381).
+takes_course(jjuuko, 15-381).
 
 takes_course(brian, csc1200).
 takes_course(brian, csc2200).
@@ -168,6 +284,12 @@ takes_course(brian, csc2209).
 takes_course(brian, csc2207).
 takes_course(brian, csc2210).
 takes_course(brian, bis1206).
+takes_course(brian, 15-211).
+takes_course(brian, 15-212).
+takes_course(brian, 15-381).
+takes_course(brian, 21-484).
+takes_course(brian, 15-381).
+takes_course(brian, 15-381).
 
 takes_course(resty, csc1200).
 takes_course(resty, csc2200).
@@ -175,6 +297,12 @@ takes_course(resty, csc2209).
 takes_course(resty, csc2207).
 takes_course(resty, csc2210).
 takes_course(resty, bis1206).
+takes_course(resty, 15-211).
+takes_course(resty, 15-212).
+takes_course(resty, 15-381).
+takes_course(resty, 21-484).
+takes_course(resty, 15-381).
+takes_course(resty, 15-381).
 
 takes_course(peter, csc1200).
 takes_course(peter, csc2200).
@@ -182,6 +310,12 @@ takes_course(peter, csc2209).
 takes_course(peter, csc2207).
 takes_course(peter, csc2210).
 takes_course(peter, bis1206).
+takes_course(peter, 15-211).
+takes_course(peter, 15-212).
+takes_course(peter, 15-381).
+takes_course(peter, 21-484).
+takes_course(peter, 15-381).
+takes_course(peter, 15-381).
 
 takes_course(griffin, csc1200).
 takes_course(griffin, csc2200).
@@ -189,6 +323,12 @@ takes_course(griffin, csc2209).
 takes_course(griffin, csc2207).
 takes_course(griffin, csc2210).
 takes_course(griffin, bis1206).
+takes_course(griffin, 15-211).
+takes_course(griffin, 15-212).
+takes_course(griffin, 15-381).
+takes_course(griffin, 21-484).
+takes_course(griffin, 15-381).
+takes_course(griffin, 15-381).
 
 takes_course(james, csc1200).
 takes_course(james, csc2200).
@@ -196,6 +336,12 @@ takes_course(james, csc2209).
 takes_course(james, csc2207).
 takes_course(james, csc2210).
 takes_course(james, bis1206).
+takes_course(james, 15-211).
+takes_course(james, 15-212).
+takes_course(james, 15-381).
+takes_course(james, 21-484).
+takes_course(james, 15-381).
+takes_course(james, 15-381).
 
 takes_course(stewie, csc1200).
 takes_course(stewie, csc2200).
@@ -203,6 +349,12 @@ takes_course(stewie, csc2209).
 takes_course(stewie, csc2207).
 takes_course(stewie, csc2210).
 takes_course(stewie, bis1206).
+takes_course(stewie, 15-211).
+takes_course(stewie, 15-212).
+takes_course(stewie, 15-381).
+takes_course(stewie, 21-484).
+takes_course(stewie, 15-381).
+takes_course(stewie, 15-381).
 
 % e course instance
 course(csc1200, logic_programming, 3).
@@ -214,7 +366,7 @@ course(bis1206, systems_analysis_and_design, 3).
 course(csc1100, stuctured_programming, 3).
 course(csc1780, dim, 4).
 course(csc2647, saad, 3).
-course(csc2256, oranisation_ethics, 3).
+course(csc2256, organisation_ethics, 3).
 course(csc2215, hacking, 3).
 course(bis1209, opp, 3).
 course(csc1983, ccna, 3).
@@ -225,6 +377,15 @@ course(csc4568, mat_lab, 3).
 course(bis1657, os, 3).
 course(csc2357, prolog, 3).
 course(csc1276, obp, 4).
+course(15-211, fundamental_Data_Structures_and_Algorithms, 4).
+course(15-212, principles_of_Programming, 5).
+course(15-381, artificial_Intelligence, 3).
+course(15-681, machine_Learning, 3).
+course(80-310, logic_and_Computation, 4).
+course(21-484, graph_Theory , 3).
+course(70-122, accounting, 3).
+course(70-311, organizational_Behavior, 3).
+course(19-601, information_Warfare , 3).
 
 
 % f student_score
@@ -391,26 +552,36 @@ student_score(noowe-charlotte, csc2210, 65).
 student_score(noowe-charlotte, bis1206, 50).
 
 % g course_belongs_to department
-course_belongs_to_department(csc1200, cs).
+course_belongs_to_department(csc1200, computer_science_department).
 course_belongs_to_department(csc2200, it).
-course_belongs_to_department(csc2209, cs).
-course_belongs_to_department(csc2207, cs).
+course_belongs_to_department(csc2209, computer_science_department).
+course_belongs_to_department(csc2207, computer_science_department).
 course_belongs_to_department(csc2210, networks).
 course_belongs_to_department(bis1206, information_systems_department).
 course_belongs_to_department(csc1100, it).
-course_belongs_to_department(csc1780, cs).
-course_belongs_to_department(csc2648, cs).
+course_belongs_to_department(csc1780, computer_science_department).
+course_belongs_to_department(csc2648, computer_science_department).
 course_belongs_to_department(csc2256, bis).
 course_belongs_to_department(csc2215, networks).
 course_belongs_to_department(bis1209, information_systems_department).
 course_belongs_to_department(csc1983, it).
-course_belongs_to_department(csc2985, cs).
-course_belongs_to_department(csc6213, cs).
-course_belongs_to_department(csc6579, cs).
+course_belongs_to_department(csc2985, computer_science_department).
+course_belongs_to_department(csc6213, computer_science_department).
+course_belongs_to_department(csc6579, computer_science_department).
 course_belongs_to_department(csc4568, networks).
 course_belongs_to_department(bis1657, information_systems_department).
 course_belongs_to_department(csc2357, networks).
 course_belongs_to_department(bis1276, information_systems_department).
+course_belongs_to_department(15-211, computer_science_department).
+course_belongs_to_department(15-212, computer_science_department).
+course_belongs_to_department(15-381, computer_science_department).
+course_belongs_to_department(15-681, computer_science_department).
+course_belongs_to_department(80-310, computer_science_department).
+course_belongs_to_department(21-484, computer_science_department).
+course_belongs_to_department(70-122, accounting_department).
+course_belongs_to_department(70-311, records_and_arhive_department).
+course_belongs_to_department(19-601, records_and_arhive_department).
+
 
 % a student_belongs_to_department
 student_belongs(X, Y) :- student(X), takes_course(X, Z), course_belongs_to_department(Z, Y).
@@ -500,35 +671,6 @@ compute_student_GP(jesse, _grade_point) :-
 
 compute_student_GP(duke, _grade_point) :-
 	_grade_point is ( (5 * 3) + (5 * 4) + (3 * 3) + (5 * 3) + (3 * 3) + (2 * 3) ) / (4 + 3 + 3 + 3 + 3 + 3).
-
-
-
-% compute_student_gp1(X,Y) :-
-
-% student(X),
- 
-% takes(X,Y),
- 
-% course(Y,N,C),
- 
-% student_score(X,N,Score),
- 
-% (((Score >= 80) -> GP is 5,write(GP));
- 
-% ((Score < 80), (Score >= 70)) -> GP is 4,write(GP);
- 
-% ((Score <70), (Score >= 60)) -> GP is 3,write(GP);
- 
-% ((Score <60), (Score >= 50)) -> GP is 2,write(GP); GP is 1,write(GP)),
- 
-% Points_earned is ((GP*C)),nl,write(Points_earned),nl,Grade_points is Points_earned /63, write(Grade_points),nl.
-
-
-
-
-
-
-
 
 
 
